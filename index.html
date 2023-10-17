@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1</title>
+    <style>
+        .main {
+            text-align: center;
+            position: relative;
+            top: -150px;
+        }
+        .sp{animation: sizeChange 0.7s;}
+		.ops{animation: opacityChange 2s;}
+
+        h1 {
+            position: relative;
+            top: 200px;
+            font-size: 150px;
+            font-family: 'OAGothic-ExtraBold';
+        }
+
+        .you, .first, .sr {
+            font-size: 24px;
+        }
+
+        .you {
+            margin: 0;
+            position: relative;
+            top: 150px;
+        }
+
+        .first {
+            margin: 0;
+            position: relative;
+            top: 180px;
+        }
+
+        .sr {
+            margin: 0;
+            position: relative;
+            top: 220px;
+        }
+
+        .yes {
+            margin: 0;
+            position: relative;
+            top: 230px;
+        }
+
+        .light {
+            position: relative;
+            text-align: center;
+            top: 430px;
+            margin-left: -0px;
+        }
+
+        .ll {
+            position: relative;
+            text-align: center;
+            top: 430px;
+            margin-left: -975px;
+        }
+
+        @font-face {
+            font-family: 'OAGothic-ExtraBold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/OAGothic-ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        @keyframes sizeChange {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(5);
+    }
+}
+
+@keyframes opacityChange {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="sp">
+        <img src="light.png" class="light">
+        <img src="light_2.png" class="ll">
+<h1>깜짝 퀴즈쇼</h1>
+ </div>
+ <div class="ops">
+    <p class="you">당신을 ‘깜짝 퀴즈쇼’에 초대합니다</p>
+
+    <p class="first">첫 도전 만점에 도달할 시<br>지역아동센터에 100만원이 기부됩니다.</p>
+    <p class="sr">수락하시겠습니까?</p>
+
+    <a href="page2.html"><button class="yes">YES</button></a>
+</div>
+</div>
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

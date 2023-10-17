@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>4</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* 스크롤바 숨기기 */
+        }
+
+        h1 {
+            text-align: center;
+            position: relative;
+            top: 80px;
+            font-size: 90px;
+            font-family: 'OAGothic-ExtraBold';
+        }
+        #timer { position:absolute; left: 100px; top: 30px; font-size: 15px;}
+        #score { position:absolute; left: 1550px; top: 30px; font-size: 15px; }
+
+        .iiii {
+            position: relative;
+            text-align: center;
+            top: 50px;
+        }
+
+        .box {
+            width: 955px;
+            height: 800px;
+            position: relative;
+            top: -550px;
+            background-color: none;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        @font-face {
+            font-family: 'OAGothic-ExtraBold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/OAGothic-ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+	<div id="timer"></div>
+    <div id="score">Score: 2</div>
+<h1>다음중 독립운동가를<br>
+찾으시오</h1>
+<div class="iiii">
+    <a href="page7.html"><img src="4_1.jpg" class="one"></a>
+    <a href="page6.html"><img src="4_2.jpg" class="t"></a>
+    <a href="page6.html"><img src="4_3.jpg" class="tt"></a>
+    <a href="page6.html"><img src="4_4.jpg" class="f"></a>
+</div>
+
+<script type="text/javascript">
+	var timerElement = document.getElementById("timer");
+        var scoreElement = document.getElementById("score");
+        var secondsLeft = 7;
+        var score = 0;
+
+        // 타이머 시작
+        var timerInterval = setInterval(function() {
+            timerElement.textContent = "남은 시간: " + secondsLeft + "초";
+            secondsLeft--;
+
+            if (secondsLeft < 0) {
+                clearInterval(timerInterval);
+                timerElement.textContent = "시간 초과!";
+                window.location.href = 'page5.html'; // 시간 초과 시 페이지 이동
+            }
+        }, 1000);
+
+        function selectNumber(number) {
+            if (number === 4) {
+                score++;
+                scoreElement.textContent = "Score: " + score;
+                window.location.href = 'page4.html';
+            } else {
+                window.location.href = 'page6.html';
+            }
+        }
+
+</script>
+</body>
+</html>

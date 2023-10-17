@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* 스크롤바 숨기기 */
+        }
+        #timer { position:absolute; left: 100px; top: 30px; font-size: 15px;}
+        #score { position:absolute; left: 1550px; top: 30px; font-size: 15px; }
+        h1{text-align: center; position: relative;
+        top: 30px; font-size: 90px;
+            font-family: 'OAGothic-ExtraBold';}
+
+        .ooo{position: relative; 
+        text-align: center; top: 50px;}
+        .ttt{position: relative; top: 100px; 
+        text-align: center;}
+    .box {width: 955px; 
+        height: 800px; 
+        position: relative;
+        top: -815px;
+        background-color: none;
+        border: 1px solid black;
+        margin: 0 auto;
+    }
+    .button-container {
+            text-align: center;
+            margin-top: 120px;
+        }
+        .button {
+            font-size: 24px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+    @font-face {
+        font-family: 'OAGothic-ExtraBold';
+         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/OAGothic-ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+        font-style: normal;
+    }
+    </style>
+</head>
+<body>
+    <div id="timer"></div>
+    <div id="score">Score: 0</div>
+    <h1>다음중 올바른<br>
+    태극기를 고르시오</h1>
+    <div class="ooo">
+        <a href="page6.html"><img src="1.jpg" class="one"></a>
+        <a href="page6.html"><img src="2.jpg" class="two"></a>
+        <a href="page6.html"><img src="3.jpg" class="th"></a>
+    </div>
+    <div class="ttt">
+        <a href="page6.html"><img src="4.jpg" class="for"></a>
+        <a href="page3.html" onclick="increaseScoreAndNavigate()"> <img src="5.jpg" class="fiv"></a>
+        <a href="page6.html"><img src="6.jpg" class="six"></a>
+    </div>
+
+    <script type="text/javascript">
+        var timerElement = document.getElementById("timer");
+        var scoreElement = document.getElementById("score");
+        var secondsLeft = 7; 
+        var score = 0;
+
+        // 타이머 시작
+        var timerInterval = setInterval(function() {
+            timerElement.textContent = "남은 시간: " + secondsLeft + "초";
+            secondsLeft--;
+
+            if (secondsLeft < 0) {
+                clearInterval(timerInterval);
+                timerElement.textContent = "시간 초과!";
+                window.location.href = 'page5.html'; // 시간 초과 시 페이지 이동
+            }
+        }, 1000);
+
+        // 점수 추가 및 페이지 이동 함수
+        function increaseScoreAndNavigate() {
+            score++;
+            scoreElement.textContent = "Score: " + score;
+            window.location.href = 'page3.html';
+        }
+    </script>
+</body>
+</html>
+
